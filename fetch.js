@@ -558,17 +558,17 @@ export function fetch(input, init) {
       xhr.withCredentials = false
     }
 
-    if ('responseType' in xhr) {
-      if (support.blob) {
-        xhr.responseType = 'blob'
-      } else if (
-        support.arrayBuffer &&
-        request.headers.get('Content-Type') &&
-        request.headers.get('Content-Type').indexOf('application/octet-stream') !== -1
-      ) {
-        xhr.responseType = 'arraybuffer'
-      }
-    }
+    // if ('responseType' in xhr) {
+    //   if (support.blob) {
+    //     xhr.responseType = 'blob'
+    //   } else if (
+    //     support.arrayBuffer &&
+    //     request.headers.get('Content-Type') &&
+    //     request.headers.get('Content-Type').indexOf('application/octet-stream') !== -1
+    //   ) {
+    //     xhr.responseType = 'arraybuffer'
+    //   }
+    // }
 
     if (init && typeof init.headers === 'object' && !(init.headers instanceof Headers)) {
       Object.getOwnPropertyNames(init.headers).forEach(function(name) {
